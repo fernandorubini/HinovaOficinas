@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App -->
+    <string name="app_name">Hinova Oficinas</string>
+
+    <!-- Login -->
+    <string name="login_title">Hinova Oficina</string>
+    <string name="login_label_cpf">CPF</string>
+    <string name="login_label_senha">Senha</string>
+    <string name="login_button">Entrar</string>
+    <string name="required_field">Campo obrigatório</string>
+    <string name="hint_cpf">CPF</string>
+    <string name="hint_senha">Senha</string>
+    <string name="action_login">Entrar</string>
+
+    <string name="error_informe_cpf">Informe o CPF</string>
+    <string name="error_informe_senha">Informe a senha</string>
+    <string name="error_login_invalido">CPF ou senha inválidos.</string>
+
+    <!-- Tabs -->
+    <string name="tab_oficinas">Oficinas</string>
+    <string name="tab_indicacao">Indicação</string>
+
+    <!-- Home -->
+    <string name="home_title">Hinova Oficinas</string>
+    <string name="home_customers">Clientes</string>
+    <string name="home_vehicles">Veículos</string>
+    <string name="home_orders">Ordens de Serviço</string>
+    <string name="home_profile">Perfil</string>
+
+    <!-- Lista de Oficinas -->
+    <string name="title_car_repair_list">Lista de Oficinas</string>
+    <string name="empty_active_repairs">Nenhuma oficina ativa.</string>
+    <string name="content_desc_foto_oficina">Foto da oficina</string>
+    <string name="empty_oficinas">Nenhuma oficina encontrada</string>
+    <string name="label_endereco">Endereço</string>
+    <string name="label_telefone1">Telefone 1</string>
+    <string name="label_telefone2">Telefone 2</string>
+    <string name="label_email">E-mail</string>
+    <string name="error_load_repairs">Falha ao carregar oficinas.</string>
+
+    <!-- Estados “não informado” -->
+    <string name="not_informed">Não informado</string>
+    <string name="not_informed_address">Endereço não informado</string>
+    <string name="not_informed_tel">Telefone não informado</string>
+    <string name="not_informed_email">E-mail não informado</string>
+
+    <!-- Indicação -->
+    <string name="title_indication">Indicação</string>
+    <string name="desc_indication">Convide um amigo.</string>
+    <string name="btn_invite_friend">Convidar amigo</string>
+    <string name="hint_friend_name">Nome do amigo</string>
+    <string name="hint_friend_phone">Telefone do amigo</string>
+    <string name="hint_friend_email">E-mail do amigo</string>
+    <string name="action_send_indication">Enviar indicação</string>
+    <string name="success_indication">Enviado com sucesso.</string>
+    <string name="error_form_name">Informe o nome</string>
+    <string name="error_form_phone">Informe o telefone</string>
+    <string name="error_form_email">Informe o e-mail</string>
+    <string name="error_indication_generic">Falha ao enviar.</string>
+    <string name="error_network">Erro de rede.</string>
+
+    <!-- Detalhes da oficina -->
+    <string name="title_oficina_details">Detalhes da oficina</string>
+    <string name="action_ligar">Ligar</string>
+    <string name="placeholder_nome">Nome da oficina</string>
+    <string name="placeholder_endereco">Endereço</string>
+    <string name="placeholder_telefone">(00) 0000-0000</string>
+
+    <!-- Maps -->
+    <string name="google_maps_key">SUA_CHAVE_AQUI</string>
+    <string name="device_location">Local do dispositivo: %1$s, %2$s</string>
+
+    <!-- Perfil / Menu -->
+    <string name="menu_profile">Meu Perfil</string>
+    <string name="menu_logout">Sair</string>
+    <string name="action_logout">Sair</string>
+
+    <!-- Perfil (labels usados nas telas novas) -->
+    <string name="profile_title">Perfil</string>
+    <string name="profile_label_id">ID</string>
+    <string name="profile_label_name">Nome</string>
+    <string name="profile_label_email">E-mail</string>
+    <string name="profile_label_workshop">Oficina</string>
+
+    <!-- Perfil (mantidos para compatibilidade com telas antigas) -->
+    <string name="profile_id">Id</string>
+    <string name="profile_nome">Nome</string>
+    <string name="profile_codigo">Código mobile</string>
+    <string name="profile_cpf">CPF</string>
+    <string name="profile_email">E-mail</string>
+    <string name="profile_telefone">Telefone</string>
+    <string name="profile_situacao">Situação</string>
+
+    <!-- res/values/strings.xml -->
+    <string name="user_data">Dados do Usuário</string>
+    <string name="profile_codigo_mobile">Código Mobile</string>
+    <string name="profile_btn_continue">Continuar</string>
+    <string name="empty_list">Nenhuma oficina encontrada</string>
+    <string name="os_title">Ordens de Serviço</string>
+    <string name="os_hint">Gerencie ou consulte suas ordens de serviço</string>
+    <string name="os_button_manage">Abrir gerenciador</string>
+
+    <!-- res/values/strings.xml (trechos) -->
+    <string name="indication_subtitle">Indique uma oficina para um amigo.</string>
+    <string name="indication_button">Convidar amigo</string>
+    <string name="error_session_read">Falha ao ler a sessão.</string>
+
+
+</resources>

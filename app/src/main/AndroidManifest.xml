@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.fernandodev.hinovaoficinas">
+
+    <!-- Permissões de rede -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".HinovaApp"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HinovaOficinas"
+        android:allowBackup="false"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
+
+        <!-- (Opcional) Chave do Google Maps -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <!-- Telas -->
+        <activity
+            android:name=".ui.details.OficinaDetailsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.profile.ActivityProfile"
+            android:exported="false"
+            android:label="@string/profile_title" />
+
+        <activity
+            android:name=".ui.indication.ActivityIndication"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.principal.ActivityPrincipal"
+            android:exported="false"
+            android:label="@string/home_title" />
+
+        <!-- Launcher -->
+        <activity
+            android:name=".ui.login.ActivityLogin"
+            android:exported="true"
+            android:label="@string/login_title"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
