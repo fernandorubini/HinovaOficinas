@@ -1,15 +1,32 @@
+# --- Gradle / Build ---
+.gradle/
+**/build/
+.cxx/
+.externalNativeBuild/
+
+# --- Android Studio / IntelliJ ---
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+
+# --- Config local da máquina ---
 local.properties
+/local.properties
+
+# --- Capturas / Assets gerados ---
+captures/
+
+# --- Keystores / Assinatura (NUNCA subir) ---
+*.jks
+*.keystore
+**/key.properties
+
+# --- Artefatos grandes (opcional subir via releases) ---
+*.apk
+*.aab
+
+# --- SO / Misc ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
