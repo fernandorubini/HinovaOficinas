@@ -9,7 +9,7 @@ class RegisterPaymentUseCase(
 ) {
     data class Params(
         val osId: Long,
-        val method: PaymentMethod,   // recebe enum
+        val method: PaymentMethod,
         val value: BigDecimal,
         val paidAt: Long,
         val externalId: String?
@@ -18,7 +18,7 @@ class RegisterPaymentUseCase(
     suspend operator fun invoke(params: Params): Long =
         repository.registerPayment(
             osId       = params.osId,
-            method     = params.method, // converte para String que o repo espera
+            method     = params.method,
             value      = params.value,
             paidAt     = params.paidAt,
             externalId = params.externalId

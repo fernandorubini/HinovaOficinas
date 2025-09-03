@@ -21,7 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import br.com.fernandodev.hinovaoficinas.core.network.HinovaWebRepository
-import br.com.fernandodev.hinovaoficinas.domain.model.Oficina   // ✅ importa o modelo de DOMÍNIO
+import br.com.fernandodev.hinovaoficinas.domain.model.Oficina
 
 @Composable
 fun OficinasScreen(
@@ -30,7 +30,6 @@ fun OficinasScreen(
     var result by remember { mutableStateOf<Result<List<Oficina>>?>(null) }
 
     LaunchedEffect(Unit) {
-        // ajuste os parâmetros conforme precisar
         result = web.getOficinas(codigoAssociacao = 601, cpfAssociado = "")
     }
 

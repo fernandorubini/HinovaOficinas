@@ -1,4 +1,3 @@
-// File: app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/tabs/CarRepairFragment.kt
 package br.com.fernandodev.hinovaoficinas.ui.tabs
 
 import android.os.Bundle
@@ -40,10 +39,8 @@ class CarRepairFragment : Fragment(R.layout.fragment_oficinas) {
         binding.rvOficinas.layoutManager = LinearLayoutManager(requireContext())
         binding.rvOficinas.adapter = adapter
 
-        // carrega as oficinas
         fetchOficinas()
 
-        // Botão do rodapé (pode abrir sua tela Compose/fragment de OS)
         binding.btnOpenOs.setOnClickListener {
             Toast.makeText(requireContext(), "Abrir gerenciador de OS", Toast.LENGTH_SHORT).show()
             // TODO: navegar para sua tela de OS (Compose/Fragment/Activity)

@@ -7,6 +7,6 @@ data class OrderFinancialSummary(
     val itemsTotal: BigDecimal,
     val discount: BigDecimal,
     val paymentsTotal: BigDecimal,
-    val totalDue: BigDecimal,      // itemsTotal - discount
-    val outstanding: BigDecimal    // totalDue - paymentsTotal
+    val totalDue: BigDecimal,
+    val outstanding: BigDecimal
 )

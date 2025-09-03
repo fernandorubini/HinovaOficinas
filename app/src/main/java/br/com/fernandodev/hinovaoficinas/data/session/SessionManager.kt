@@ -1,4 +1,3 @@
-// app/src/main/java/br/com/fernandodev/hinovaoficinas/data/session/SessionManager.kt
 package br.com.fernandodev.hinovaoficinas.data.session
 
 import android.content.Context
@@ -11,9 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
 
-/**
- * Gerencia sessão via DataStore.
- */
+
 object SessionManager {
 
     // DataStore
@@ -21,7 +18,6 @@ object SessionManager {
     private val KEY_USER_JSON: Preferences.Key<String> = stringPreferencesKey("user_json")
     private val gson = Gson()
 
-    // Modelo único de usuário salvo na sessão
     data class LoginUser(
         val Id: Long? = null,
         val Nome: String? = null,

@@ -22,8 +22,6 @@ class ActivityQrScanner : AppCompatActivity() {
 
         barcodeView = findViewById(R.id.barcode_scanner)
         barcodeView.decodeContinuous {
-            // Não precisamos tratar o resultado segundo o enunciado
-            // Mantemos rodando até o usuário voltar
         }
     }
 

@@ -20,7 +20,6 @@ class ServiceOrderRepositoryImpl(
     private val paymentDao: PaymentDao
 ) : ServiceOrderRepository {
 
-    /* ---------- Observes ---------- */
 
     override fun observeOrdersByStatus(status: ServiceOrderStatus): Flow<List<ServiceOrder>> =
         orderDao.observeByStatus(status.name).map { list -> list.map { it.toDomain() } }
@@ -31,7 +30,6 @@ class ServiceOrderRepositoryImpl(
     override fun observePaymentsByOrder(orderId: Long): Flow<List<Payment>> =
         paymentDao.observeByOrder(orderId).map { list -> list.map { it.toDomain() } }
 
-    /* ---------- Comandos ---------- */
 
     override suspend fun addItem(
         osId: Long,
@@ -65,7 +63,7 @@ class ServiceOrderRepositoryImpl(
     ): Long {
         val entity = PaymentEntity(
             serviceOrderId = osId,
-            method = method.name,            // persiste como String
+            method = method.name,
             amount = value.toDouble(),
             status = "PAID",
             createdAtEpochMs = paidAt,
@@ -75,14 +73,12 @@ class ServiceOrderRepositoryImpl(
 
     override suspend fun closeOrder(osId: Long, closedAt: Long) {
         orderDao.updateStatus(osId, ServiceOrderStatus.CLOSED.name)
-        // Se quiser persistir o closedAt, adicione um DAO/coluna e atualize aqui.
     }
 
     override suspend fun updateStatus(osId: Long, newStatus: ServiceOrderStatus) {
         orderDao.updateStatus(osId, newStatus.name)
     }
 
-    /* ---------- Consultas auxiliares ---------- */
 
     override suspend fun getOrderById(osId: Long): ServiceOrder? =
         orderDao.getById(osId)?.toDomain()
@@ -96,7 +92,7 @@ class ServiceOrderRepositoryImpl(
     override suspend fun sumPaymentsByPeriod(from: Long, to: Long): BigDecimal =
         BigDecimal.valueOf(paymentDao.sumByPeriod(from, to))
 
-    /* ---------- Abertura ---------- */
+
 
     override suspend fun openOrder(
         customerId: Long,
@@ -105,7 +101,7 @@ class ServiceOrderRepositoryImpl(
         openedAt: Long
     ): Long {
         val entity = ServiceOrderEntity(
-            id = 0, // autogerado
+            id = 0,
             customerName = "Cliente #$customerId",
             vehiclePlate = "VEÍC-$vehicleId",
             description = notes,

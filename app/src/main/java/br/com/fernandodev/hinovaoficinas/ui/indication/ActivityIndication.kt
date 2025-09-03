@@ -1,4 +1,3 @@
-// File: app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/indication/ActivityIndication.kt
 package br.com.fernandodev.hinovaoficinas.ui.indication
 
 import android.os.Build
@@ -82,23 +81,21 @@ class ActivityIndication : AppCompatActivity() {
                 return@launch
             }
 
-            // Data no formato do escopo (yyyy-MM-dd)
             val hoje = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
 
-            // Monta o ENVELOPE conforme a API do teste (Indicacao + Remetente + Copias)
             val entrada = EntradaIndicacaoDto(
                 indicacao = IndicacaoDto(
                     codigoAssociacao = 601,
                     dataCriacao = hoje,
-                    cpfAssociado = user.Cpf,          // campos do usuário logado
+                    cpfAssociado = user.Cpf,
                     emailAssociado = user.Email,
                     nomeAssociado = user.Nome,
                     telefoneAssociado = user.Telefone,
-                    placaVeiculoAssociado = null,     // adicione no formulário se quiser
+                    placaVeiculoAssociado = null,
                     nomeAmigo = nome,
                     telefoneAmigo = tel,
                     emailAmigo = email,
-                    observacao = null                 // adicione no formulário se quiser
+                    observacao = null
                 ),
                 remetente = (user.Email ?: ""),
                 copias = emptyList()

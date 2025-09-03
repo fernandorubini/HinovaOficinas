@@ -9,13 +9,12 @@ class GetOrderFinancialSummaryUseCase(
 ) {
 
     suspend operator fun invoke(osId: Long): OrderFinancialSummary {
-        // valida existência da OS (mensagem atual em PT-BR como você colocou)
         repository.getOrderById(osId) ?: error("OS não encontrada")
 
-        val itemsTotal    = repository.sumItems(osId)          // BigDecimal
-        val discount      = BigDecimal.ZERO                    // ainda não há desconto no modelo
+        val itemsTotal    = repository.sumItems(osId)
+        val discount      = BigDecimal.ZERO
         val totalDue      = itemsTotal.subtract(discount).max(BigDecimal.ZERO)
-        val paymentsTotal = repository.sumPayments(osId)       // BigDecimal
+        val paymentsTotal = repository.sumPayments(osId)
         val outstanding   = totalDue.subtract(paymentsTotal)
 
         return OrderFinancialSummary(

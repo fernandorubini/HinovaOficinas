@@ -11,7 +11,6 @@ class AdvanceOrderStatusUseCase(
         val newStatus: ServiceOrderStatus
     )
 
-    // Política simples: qualquer avanço é permitido (customize conforme sua regra)
     suspend operator fun invoke(params: Params) {
         repository.updateStatus(params.osId, params.newStatus)
     }

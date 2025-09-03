@@ -22,7 +22,6 @@ fun AppNavHost(
         startDestination = startDestination,
         modifier = modifier
     ) {
-        // Lista de OS
         composable(route = NavRoutes.OS_LIST) {
             OSListScreen(
                 onOpenDetail = { osId ->
@@ -31,7 +30,6 @@ fun AppNavHost(
             )
         }
 
-        // Detalhe da OS
         composable(
             route = NavRoutes.OS_DETAIL_ROUTE_PATTERN,
             arguments = listOf(

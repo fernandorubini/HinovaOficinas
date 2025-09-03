@@ -1,4 +1,3 @@
-// File: app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/details/ActivityDetailsCarRepair.kt
 package br.com.fernandodev.hinovaoficinas.ui.details
 
 import android.content.Context
@@ -56,10 +55,8 @@ class ActivityDetailsCarRepair : AppCompatActivity() {
         )
     }
 
-    /* ---------- Ações ---------- */
 
     private fun abrirDiscador(numero: String) {
-        // Não requer permissão (ACTION_DIAL apenas abre o discador)
         val uri = Uri.parse("tel:$numero")
         startActivity(Intent(Intent.ACTION_DIAL, uri))
     }
@@ -67,20 +64,15 @@ class ActivityDetailsCarRepair : AppCompatActivity() {
     private fun enviarEmail(destinatario: String) {
         val uri = Uri.parse("mailto:$destinatario")
         val intent = Intent(Intent.ACTION_SENDTO, uri)
-        // extras opcionais
-        // intent.putExtra(Intent.EXTRA_SUBJECT, "Assunto")
-        // intent.putExtra(Intent.EXTRA_TEXT, "Mensagem")
         startActivity(Intent.createChooser(intent, "Enviar e-mail"))
     }
 
     private fun abrirMapa(endereco: String) {
-        // Usa geo: query por endereço (abre Google Maps ou app similar)
         val query = URLEncoder.encode(endereco, "UTF-8")
         val uri = Uri.parse("geo:0,0?q=$query")
         startActivity(Intent(Intent.ACTION_VIEW, uri))
     }
 
-    /* ---------- Helpers UI ---------- */
 
     private fun String?.orDash() = if (this.isNullOrBlank()) "-" else this
 
@@ -101,7 +93,7 @@ class ActivityDetailsCarRepair : AppCompatActivity() {
         if (base64.isNullOrBlank()) {
             this.setImageDrawable(null)
             this.adjustViewBounds = false
-            this.layoutParams.height = 0 // some “collapse” if you prefer
+            this.layoutParams.height = 0
             return
         }
         runCatching {
@@ -109,7 +101,6 @@ class ActivityDetailsCarRepair : AppCompatActivity() {
             val bmp = BitmapFactory.decodeByteArray(data, 0, data.size)
             this.setImageBitmap(bmp)
         }.onFailure {
-            // se der ruim, só limpa a imagem
             this.setImageDrawable(null)
         }
     }

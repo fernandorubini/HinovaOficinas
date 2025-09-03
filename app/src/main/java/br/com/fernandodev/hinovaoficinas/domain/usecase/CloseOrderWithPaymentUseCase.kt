@@ -17,11 +17,7 @@ class CloseOrderWithPaymentUseCase(
         val externalId: String?
     )
 
-    /**
-     * Registra pagamento e tenta fechar a OS.
-     * Fecha apenas se outstanding <= 0 após o novo pagamento.
-     * Retorna o outstanding atual após a operação.
-     */
+
     suspend operator fun invoke(params: Params): java.math.BigDecimal {
         repository.registerPayment(
             osId = params.osId,

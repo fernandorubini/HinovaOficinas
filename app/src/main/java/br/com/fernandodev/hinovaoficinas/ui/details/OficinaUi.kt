@@ -1,4 +1,3 @@
-// File: app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/details/OficinaUi.kt
 package br.com.fernandodev.hinovaoficinas.ui.details
 
 import android.os.Parcelable

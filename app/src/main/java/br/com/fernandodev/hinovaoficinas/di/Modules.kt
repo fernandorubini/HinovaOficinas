@@ -34,18 +34,15 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-/* -------------------- Database + DAOs -------------------- */
 val databaseModule = module {
     single<AppDatabase> { DatabaseProvider.get(androidContext()) }
     single<CheckinPhotoDao> { get<AppDatabase>().checkinPhotoDao() }
 
-    // DAOs expostos pelo AppDatabase atual
     single<ServiceOrderDao> { get<AppDatabase>().serviceOrderDao() }
     single<ServiceOrderItemDao> { get<AppDatabase>().serviceOrderItemDao() }
     single<PaymentDao> { get<AppDatabase>().paymentDao() }
 }
 
-/* -------------------- Network -------------------- */
 private const val BASE_URL =
     "http://app.hinovamobile.com.br/ProvaConhecimentoWebApi/"
 
@@ -84,11 +81,9 @@ val networkModule = module {
 
     single<HinovaApi> { get<Retrofit>().create(HinovaApi::class.java) }
 
-    // Repositório web que consome a API (Oficinas, Indicação, etc.)
     single { HinovaWebRepository(api = get()) }
 }
 
-/* -------------------- Repositories -------------------- */
 val repositoryModule = module {
     single<ServiceOrderRepository> {
         ServiceOrderRepositoryImpl(
@@ -97,27 +92,23 @@ val repositoryModule = module {
             paymentDao = get()
         )
     }
-    // Os abaixo permanecem se você ainda os utiliza em outras telas
     single<CustomerRepository> { CustomerRepositoryImpl(get()) }
     single<VehicleRepository> { VehicleRepositoryImpl(get()) }
     single<ServiceCatalogRepository> { ServiceCatalogRepositoryImpl(get()) }
     single<StockRepository> { StockRepositoryImpl(get()) }
 }
 
-/* -------------------- UseCases -------------------- */
 val useCaseModule = module {
     single { ObservePaymentsByOrderUseCase(get<ServiceOrderRepository>()) }
     single { GetRevenueByPeriodUseCase(get<ServiceOrderRepository>()) }
 }
 
-/* -------------------- ViewModels -------------------- */
 val viewModelModule = module {
     viewModel { OSViewModel(get()) }
-    // VM para a tela de Oficinas (consome HinovaWebRepository)
     viewModel { OficinasViewModel(get()) }
 }
 
-/* -------------------- Aggregator -------------------- */
+
 val appModules = listOf(
     databaseModule,
     networkModule,

@@ -1,4 +1,3 @@
-// File: app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/tabs/OficinasAdapter.kt
 package br.com.fernandodev.hinovaoficinas.ui.tabs
 
 import android.view.LayoutInflater

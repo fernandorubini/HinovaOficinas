@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import br.com.fernandodev.hinovaoficinas.domain.model.Oficina
 
 data class OficinasResponseDto(
-    @SerializedName("ListaOficinas") val lista: List<OficinaDto>? = null,
+    @SerializedName("ListaOficinas") val lista: List<OficinaDto>? = emptyList(),
     @SerializedName("RetornoErro")  val retornoErro: RetornoErroDto? = null,
     @SerializedName("Token")        val token: String? = null
 )

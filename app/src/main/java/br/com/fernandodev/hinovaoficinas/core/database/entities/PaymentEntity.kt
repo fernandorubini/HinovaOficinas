@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 data class PaymentEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0L,
     val serviceOrderId: Long,
-    val method: String = "PIX",      // PIX, CARD, CASH...
+    val method: String = "PIX",
     val amount: Double = 0.0,
-    val status: String = "PENDING",  // PENDING, PAID, CANCELED
+    val status: String = "PENDING",
     val createdAtEpochMs: Long = System.currentTimeMillis()
 )

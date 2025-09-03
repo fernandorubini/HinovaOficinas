@@ -1,4 +1,3 @@
-// File: app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/principal/ActivityPrincipal.kt
 package br.com.fernandodev.hinovaoficinas.ui.principal
 
 import android.content.Intent
@@ -54,8 +53,8 @@ class ActivityPrincipal : AppCompatActivity() {
         viewPager.adapter = object : FragmentStateAdapter(this) {
             override fun getItemCount(): Int = 2
             override fun createFragment(position: Int): Fragment = when (position) {
-                0 -> CarRepairFragment()      // 📍 Lista de Oficinas (somente ativas)
-                else -> IndicationFragment()  // 📍 Tela com texto + botão “Convidar amigo”
+                0 -> CarRepairFragment()
+                else -> IndicationFragment()
             }
         }
 

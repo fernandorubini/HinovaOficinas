@@ -1,4 +1,3 @@
-// File: app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/tabs/IndicationFragment.kt
 package br.com.fernandodev.hinovaoficinas.ui.tabs
 
 import android.content.Intent

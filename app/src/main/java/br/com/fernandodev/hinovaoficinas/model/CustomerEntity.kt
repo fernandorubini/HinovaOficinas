@@ -13,6 +13,6 @@ data class CustomerEntity(
     val name: String,
     val phone: String?,
     val email: String?,
-    val doc: String?, // CPF/CNPJ
+    val doc: String?,
     val address: String?
 )

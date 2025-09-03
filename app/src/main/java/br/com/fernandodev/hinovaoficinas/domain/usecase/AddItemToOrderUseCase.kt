@@ -10,7 +10,7 @@ class AddItemToOrderUseCase(
     data class Params(
         val osId: Long,
         val kind: ItemKind,
-        val referenceId: Long?,     // obrigatório quando kind == PART
+        val referenceId: Long?,
         val description: String?,
         val quantity: BigDecimal,
         val unitPrice: BigDecimal

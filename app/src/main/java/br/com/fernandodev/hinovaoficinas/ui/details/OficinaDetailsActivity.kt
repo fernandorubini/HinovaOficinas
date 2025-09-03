@@ -25,7 +25,6 @@ class OficinaDetailsActivity : AppCompatActivity() {
         binding = ActivityOficinaDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Toolbar (agora existe no layout)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.title_oficina_details)

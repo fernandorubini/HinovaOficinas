@@ -5,10 +5,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-/**
- * Fotos do check-in associadas a uma OS.
- * Campos alinham com o DAO (osId, timestamp).
- */
+
 @Entity(
     tableName = "checkin_photos",
     foreignKeys = [
@@ -23,7 +20,7 @@ import androidx.room.PrimaryKey
 )
 data class CheckinPhotoEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val osId: Long,        // id da OS (bate com a query do DAO)
-    val uri: String,       // caminho/URI da foto
-    val timestamp: Long    // epoch millis (usado no ORDER BY da query)
+    val osId: Long,
+    val uri: String,
+    val timestamp: Long
 )

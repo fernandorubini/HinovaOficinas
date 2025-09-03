@@ -1,4 +1,3 @@
-// File: app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/oficinas/OficinasViewModel.kt
 package br.com.fernandodev.hinovaoficinas.ui.oficinas
 
 import androidx.lifecycle.ViewModel

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.fernandodev.hinovaoficinas">
 
-    <!-- Permissões de rede -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -17,12 +16,10 @@
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config">
 
-        <!-- (Opcional) Chave do Google Maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <!-- Telas -->
         <activity
             android:name=".ui.details.OficinaDetailsActivity"
             android:exported="false" />
@@ -41,7 +38,6 @@
             android:exported="false"
             android:label="@string/home_title" />
 
-        <!-- Launcher -->
         <activity
             android:name=".ui.login.ActivityLogin"
             android:exported="true"

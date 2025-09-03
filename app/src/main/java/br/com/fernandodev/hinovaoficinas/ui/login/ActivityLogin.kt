@@ -62,7 +62,6 @@ class ActivityLogin : AppCompatActivity() {
         if (!ok) return
 
         if (cpf == CPF_VALIDO && senha == SENHA_VALIDA) {
-            // JSON “retornado” no escopo do teste (mock)
             val usuario = SessionManager.LoginUser(
                 Id = 3555L,
                 Nome = "Marcelo Teste",

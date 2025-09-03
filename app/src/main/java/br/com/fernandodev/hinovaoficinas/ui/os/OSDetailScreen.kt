@@ -29,12 +29,10 @@ fun OSDetailScreen(
     onBack: () -> Unit,
     viewModel: OSViewModel = koinViewModel()
 ) {
-    // Carrega os totais sempre que o osId mudar
     LaunchedEffect(osId) {
         viewModel.loadTotals(osId)
     }
 
-    // Coleta o StateFlow<TotalsUi> do ViewModel
     val totals by viewModel.totals.collectAsState()
 
     Scaffold(
@@ -66,7 +64,6 @@ fun OSDetailScreen(
             Text("Itens: ${totals.items}")
             Text("Pagamentos: ${totals.payments}")
 
-            // TODO: Adicione mais informações do detalhe da OS aqui (cliente, veículo, itens...)
         }
     }
 }

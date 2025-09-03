@@ -1,4 +1,3 @@
-// File: ui/details/OficinasTabFragment.kt
 package br.com.fernandodev.hinovaoficinas.ui.details
 
 import android.os.Bundle
@@ -19,7 +18,6 @@ class OficinasTabFragment : Fragment() {
         setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
         setContent {
             MaterialTheme {
-                // Usa o repositório via Koin dentro do Composable
                 OficinasScreen(web = get<HinovaWebRepository>())
             }
         }

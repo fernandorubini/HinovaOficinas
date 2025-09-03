@@ -1,4 +1,3 @@
-// app/src/main/java/br/com/fernandodev/hinovaoficinas/ui/profile/ActivityProfile.kt
 package br.com.fernandodev.hinovaoficinas.ui.profile
 
 import android.content.Intent
@@ -25,7 +24,7 @@ class ActivityProfile : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         binding.toolbar.setNavigationIcon(androidx.appcompat.R.drawable.abc_ic_ab_back_material)
         binding.toolbar.setNavigationOnClickListener { finish() }
-        binding.tvTitulo?.text = getString(R.string.app_name) // "Hinova Oficinas"
+        binding.tvTitulo?.text = getString(R.string.app_name)
 
         lifecycleScope.launch {
             val user = SessionManager.getUser(this@ActivityProfile)

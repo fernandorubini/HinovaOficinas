@@ -19,9 +19,9 @@ class CustomerRepositoryImpl(
 
     override suspend fun upsert(entity: CustomerEntity): Long =
         if (entity.id == 0L) {
-            dao.insert(entity)                         // novo
+            dao.insert(entity)
         } else {
-            dao.update(entity)                         // usa o @Update -> some o warning
+            dao.update(entity)
             entity.id
         }
 

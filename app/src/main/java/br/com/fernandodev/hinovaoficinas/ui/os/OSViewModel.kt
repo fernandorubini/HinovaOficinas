@@ -24,11 +24,9 @@ class OSViewModel(
     private val _totals = MutableStateFlow(TotalsUi())
     val totals: StateFlow<TotalsUi> = _totals.asStateFlow()
 
-    /** Fluxo de OS por status (lista de domínio) */
     fun observeByStatus(status: ServiceOrderStatus): Flow<List<ServiceOrder>> =
         repo.observeOrdersByStatus(status)
 
-    /** Carrega totais (para a tela de detalhes da OS) */
     fun loadTotals(orderId: Long) {
         viewModelScope.launch {
             val itemsCount = repo.observeItemsByOrder(orderId).firstOrNull()?.size ?: 0

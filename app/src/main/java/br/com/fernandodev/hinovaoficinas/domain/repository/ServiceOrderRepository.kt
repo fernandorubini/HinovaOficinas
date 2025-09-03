@@ -37,7 +37,6 @@ interface ServiceOrderRepository {
     suspend fun sumPayments(osId: Long): BigDecimal
     suspend fun sumPaymentsByPeriod(from: Long, to: Long): BigDecimal
 
-    /* ------- Abertura ------- */
     suspend fun openOrder(
         customerId: Long,
         vehicleId: Long,

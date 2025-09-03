@@ -9,7 +9,7 @@ data class ServiceOrderEntity(
     val customerName: String,
     val vehiclePlate: String,
     val description: String? = null,
-    val status: String = "OPEN",     // OPEN, IN_PROGRESS, CLOSED
+    val status: String = "OPEN",
     val totalAmount: Double = 0.0,
     val createdAtEpochMs: Long = System.currentTimeMillis()
 )
